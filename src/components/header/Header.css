@@ -1,0 +1,37 @@
+header{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: fit-content;
+    box-sizing: border-box;
+    z-index: 999;
+    
+}
+header a{
+    text-decoration: none;
+}
+nav-container{
+    width: fit-content;
+    padding: 10px;
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: #121212;
+    color: rgb(224, 224, 224);
+    gap: 20px;
+    z-index: 999;
+}
+
+@media only screen and (max-width: 500px) {
+    nav-container{
+        width: 100%;
+        padding: 0;
+        gap: 0;
+    }
+    header{
+        bottom: 0;
+        top: auto;
+    }
+}

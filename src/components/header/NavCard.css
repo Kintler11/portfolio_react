@@ -1,0 +1,52 @@
+.NavCard{
+    position: relative;
+    max-width: 8em;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(238, 238, 238);
+}
+.NavCard[selected=true]{
+    border-bottom: 2px solid white;
+}
+.NavCard:hover{
+    cursor: pointer;
+}
+.NavCard svg{
+    font-size: 3em;
+    z-index: 999;
+}
+.NavCard h1{
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: 1.2em;
+    z-index: 999;
+}
+
+.NavCard:hover .CardFill{
+    height: 100%;
+}
+
+.CardFill{
+    top: 0;
+    background-color: rgb(255, 30, 30);
+    position: absolute;
+    width: 100%;
+    height: 0;
+    transition: .3s;
+    z-index: 0;
+}
+.active .NavCard{
+    border-bottom: 2px solid white;
+}
+
+@media only screen and (max-width: 500px) {
+    .NavCard{
+        padding: 20px 4vw;
+    }
+    .NavCard h1{
+        display: none;
+    }
+}

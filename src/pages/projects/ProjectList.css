@@ -1,0 +1,42 @@
+.ProjectList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 80vw;
+    height: fit-content;
+    width: 100%;
+}
+
+.ListTitle{
+    max-width: 20em;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 2px solid white;
+    color: white;
+    font-size: 2em;
+    font-weight: 600;
+    margin: 0px 10px;
+    height: fit-content;
+}
+
+.ListContent{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 20px;
+    padding: 20px 0px;
+    gap: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+    .ListContent{
+        justify-content: center;
+        margin: 0;
+    }
+    .ProjectList{
+        max-width: 90vw;
+    }
+    
+}
