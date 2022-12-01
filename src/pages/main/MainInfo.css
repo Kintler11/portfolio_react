@@ -39,6 +39,7 @@ canvas{
     .info-container{
         flex-direction: column-reverse;
         text-align: center;
+        padding-bottom: 10em;
     }
     canvas{
         width: 90vw !important;

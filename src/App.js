@@ -12,6 +12,7 @@ import {AnimatePresence, motion} from 'framer-motion';
 import Header from './components/header/Header';
 import MainInfo from './pages/main/MainInfo'
 import Projects from './pages/projects/Projects'
+import About from './pages/aboutme/About';
 const App = () => {
   const [currentPage, setCurrentPage] = useState("");
   let location = useLocation();
@@ -23,6 +24,7 @@ const App = () => {
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<MainInfo />} />
             <Route path="projects" element={<Projects /> } />
+            <Route path="aboutme" element={<About /> } />
           </Routes>
         </AnimatePresence>
       </div>
