@@ -1,0 +1,18 @@
+.AboutContainer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.PersonalContainer{
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+}
+@media only screen and (max-width: 500px) {
+    .AboutContainer{
+        padding-top: 0;
+    }
+    
+}

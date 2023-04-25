@@ -4,7 +4,7 @@ import {motion} from 'framer-motion';
 import ProjectList from "./ProjectList";
 import ProjectCard from "./ProjectCard";
 import ProjectPopup from "./ProjectPopup";
-const openInNewTab = url => {
+const openInNewTab = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 const Projects = () => {
@@ -29,18 +29,15 @@ const Projects = () => {
             animate={{marginTop:"0px", opacity:1}}
             exit={{marginTop:"300vh", opacity:0}}
         >
-            {popupActive == true ? <ProjectPopup onClose={()=>{setPopupActive(false);}} title={popupData.title} description={popupData.description} /> : <></>}
-            <ProjectList title="Kehittäjänä Toiminut" style={animated ? tempStyle : {}}>
-                <ProjectCard order={1} onClick={()=>{setPopupActive(true); setPopupData({title:"Admin Taskussa", description:"Salo- ja Somerotaskussa sovellusten hallinta puoli."})}} image="/taskussa.png" icons={["js","php","html","css"]}/>
-                <ProjectCard order={2} onClick={()=>{setPopupActive(true); setPopupData({title:"Somero Taskussa", description:"Salo- ja Somerotaskussa sovellusten hallinta puoli."})}} image="/somerotaskussa.png" icons={["js","php","react"]}/>
-                <ProjectCard order={3} onClick={()=>{setPopupActive(true); setPopupData({title:"Salo Taskussa", description:"Salo- ja Somerotaskussa sovellusten hallinta puoli."})}} image="/salotaskussa.png" icons={["js","php","react"]}/>
-            </ProjectList>
-            <ProjectList title="Pelit" style={animated ? tempStyle : {}}>
-                <ProjectCard order={1} image="/taskussa.png" icons={["js","html"]}/>
-                <ProjectCard order={2}image="/somerotaskussa.png"/>
-                <ProjectCard order={3} image="/salotaskussa.png"/>
-                <ProjectCard order={4} image="/salotaskussa.png"/>
-            </ProjectList>
+{/*             {popupActive == true ? <ProjectPopup onClose={()=>{setPopupActive(false);}} title={popupData.title} description={popupData.description} /> : <></>}
+ */}            <ProjectList title="Kehittäjänä Toiminut" style={animated ? tempStyle : {}}>
+                <ProjectCard order={2} onClick={()=>{openInNewTab("https://www.somero.taskussa.info")}} image="/somerotaskussa.png" icons={["js","php","react"]}/>
+                <ProjectCard order={1} onClick={()=>{openInNewTab("https://www.admin.taskussa.info")}} image="/taskussa.png" icons={["js","php","html","css"]}/>
+                <ProjectCard order={3} onClick={()=>{openInNewTab("https://www.salotaskussa.fi")}} image="/salotaskussa.png" icons={["js","php","react"]}/>
+            </ProjectList>{
+            <ProjectList title="Omat Projektit" style={animated ? tempStyle : {}}>
+                <ProjectCard order={1} onClick={()=>{openInNewTab("https://github.com/Kintler11/rust-discord-gpt-bot")}} image="/rust-bot.png" icons={["rust"]}/>
+            </ProjectList>}
         </motion.div>
     );
 }

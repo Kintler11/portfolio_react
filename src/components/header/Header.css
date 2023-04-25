@@ -17,7 +17,7 @@ nav-container{
     padding: 10px;
     padding-top: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     background-color: #121212;
     color: rgb(224, 224, 224);
     gap: 20px;

@@ -1,0 +1,52 @@
+.DescriptionContainer{
+    margin-top: 8em;
+    max-width: 70rem;
+    color: rgb(238, 238, 238);
+    font-size: 1.1em;
+    font-weight: 500;
+    background-color: #121212;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    line-height: 1.5;
+    display: flex;
+    border-radius: 10px;
+}
+
+.ContactPoints{
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2em;
+    font-weight: 700;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.ContactPoints svg{
+    cursor: pointer;
+    transition: .1s;
+}
+
+.ContactPoints svg:hover{
+    transform: scale(1.07);
+    color: rgb(255, 30, 30);
+}
+
+@media only screen and (max-width: 800px) {
+    .DescriptionContainer{
+        flex-direction: column;
+    }
+    .ContactPoints{
+        flex-direction: row;
+    }
+    
+}
+@media only screen and (max-width: 500px) {
+    .DescriptionContainer{
+        margin-top: 0em;
+    }  
+}

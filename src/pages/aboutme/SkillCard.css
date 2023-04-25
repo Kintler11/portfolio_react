@@ -1,0 +1,50 @@
+.SkillCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 22em;
+    max-width: 80vw;
+    aspect-ratio: 22 / 37;
+    background-color: #121212;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+}
+.CardIcon, .CardTitle, .CardSkills  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 70vw;
+    color: rgb(238, 238, 238);
+}
+.CardIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 17rem;
+    font-size: 15em;
+    transform: translateZ(20px);
+}
+.SkillCard:hover .CardTitle{
+    color: rgb(255, 30, 30);
+}
+
+.CardTitle{
+    word-wrap: break-word;
+    font-size: 2rem;
+    font-weight: 600;
+    transition: .2s;
+    transform: translateZ(20px);
+}
+.CardSkills{
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    padding-top: 5px;
+    gap: 5px;
+}
+.CardSkills h2{
+    font-size: 1.3rem;
+    font-weight: 400 !important;
+}

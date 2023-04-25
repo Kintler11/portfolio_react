@@ -9,8 +9,7 @@ const Header = ({clicked_page}) => {
             <nav-container>
                 <NavLink to="/" end><NavCard icon={faHome} title="Etusivu" /></NavLink>
                 <NavLink to="/projects"><NavCard icon={faLightbulb} title="Projektit" /></NavLink>
-                <NavLink to="/aboutme"><NavCard icon={faBook} title="Minusta" /></NavLink>
-                <NavLink to="/contact"><NavCard icon={faAddressCard} title="Ota Yhteyttä" /></NavLink>
+                <NavLink to="/aboutme"><NavCard icon={faAddressCard} title="Tietoa" /></NavLink>
             </nav-container>
         </header>
     );

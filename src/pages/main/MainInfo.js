@@ -31,10 +31,10 @@ const MainInfo = () => {
                         repeat={Infinity}
                         style={{ fontSize: '2em' }}
                     />
-                <h2>Olen nettisivujen suunnittelija/ohjelmistokehittäjä peräisin Somerolta. Tykkään kehittää nettisivuja ja ohjemistoa. </h2>
+                <h2>Hei, olen Kait - 19-vuotias kehittäjä, jolla on kokemusta verkkokehityksessä ja ohjelmistokehityksessä.</h2>
             </div>{/* 
             <Globe backgroundColor="rgba(0,0,0,0)" width="500" height="500"/> */}
-            {showGlobe ? <CustomGlobe /> : <div className='scene-container' style={{minWidth:"500px"}}></div>}
+            {showGlobe ? <CustomGlobe/> : <div className='scene-container' style={{minWidth:"500px"}}></div>}
         </motion.div>
     );
 }
