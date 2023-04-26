@@ -5,14 +5,13 @@
     color: rgb(238, 238, 238);
     font-size: 1.1em;
     font-weight: 500;
-    background-color: #121212;
     width: 100%;
     padding: 20px 30px;
     box-sizing: border-box;
     line-height: 1.5;
     display: flex;
     z-index: 1;
-    background:
+/*     background:
     linear-gradient(to right, #121212 6px, transparent 6px) 0 0,
     linear-gradient(to right, #121212 6px, transparent 6px) 0 100%,
     linear-gradient(to left, #121212 6px, transparent 6px) 100% 0,
@@ -24,11 +23,33 @@
 
   background-repeat: no-repeat;
   background-size: 200px 100px;
-  transition: .2s;
+  background-position-x: 0px, 0px, 100%, 100%, 0px, 100%, 0px, 100%; */
+  border-bottom: 6px solid transparent;
+  border-image: linear-gradient(90deg, rgba(9,9,121,0) 15%, rgba(18,18,18,1) 15%, rgba(18,18,18,1) 85%, rgba(0,212,255,0) 85%);
+  border-image-slice: 1;
+  transition: .4s;
+}
+.DescriptionContainer:hover, .DescriptionContainer:focus{
+    /*     background:
+    linear-gradient(to right, #121212 0px, transparent 0px) 0 0,
+    linear-gradient(to right, #121212 0px, transparent 0px) 0 100%,
+    linear-gradient(to left, #121212 6px, transparent 6px) 100% 0,
+    linear-gradient(to left, #121212 6px, transparent 6px) 100% 100%,
+    linear-gradient(to bottom, #121212 6px, transparent 6px) 0 0,
+    linear-gradient(to bottom, #121212 6px, transparent 6px) 100% 0,
+    linear-gradient(to top, #121212 6px, transparent 6px) 0 100%,
+    linear-gradient(to top, #121212 6px, transparent 6px) 100% 100%;
+    
+    background-repeat: no-repeat;
+    background-size: 6px 200px;
+    background-position-x: -6px, -6px, 100%, 100%, -6px, 100%, -6px, 100%; */
 }
 
 .DescriptionContainer h1{
     color: rgb(255, 30, 30);
+}
+.brdr{
+    font-size: 5em;
 }
 
 .ContactPoints{
@@ -50,7 +71,7 @@
 }
 
 .ContactPoints svg:hover{
-    transform: scale(1.07);
+    transform: translateY(-5px);
     color: rgb(255, 30, 30);
 }
 

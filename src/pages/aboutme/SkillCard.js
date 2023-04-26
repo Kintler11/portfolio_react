@@ -5,7 +5,7 @@ import Tilt from 'react-parallax-tilt';
 const SkillList = (props) => {
     const { visible, cancel, clicked, children, icon, title } = props;
     return(
-        <Tilt className='SkillCard' onClick={clicked} hidden={true} options={{scale: 1.03,speed: 1000,max: 15}}>
+        <Tilt className='SkillCard ' /* tiltReverse={true} */ onClick={clicked} hidden={true} options={{scale: 1.03,speed: 1000,max: 15}}>
             <div className='CardIcon'>{icon}</div>
             <div className='CardTitle'>{title}</div>
             <div className='CardSkills'>

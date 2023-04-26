@@ -18,7 +18,7 @@ const MainInfo = () => {
                 <h1>Kait Tomson</h1>
                     <TypeAnimation
                         sequence={[
-                            'UX-Suunittelija',
+                            'Verkkokehittäjä',
                             1000,
                             'Ohjelmistokehittäjä',
                             2000,

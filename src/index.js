@@ -10,6 +10,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const pageTitle = `Kait Tomson`
+document.title = pageTitle;
 root.render(
   <BrowserRouter>
     <App />

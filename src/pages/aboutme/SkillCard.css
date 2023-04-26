@@ -26,7 +26,7 @@
     font-size: 15em;
     transform: translateZ(20px);
 }
-.SkillCard:hover .CardTitle{
+.SkillCard .CardTitle{
     color: rgb(255, 30, 30);
 }
 

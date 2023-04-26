@@ -12,8 +12,8 @@ const About = () => {
         <div className='about-container'>
         <motion.div 
             className='PersonalContainer'
-            initial={{marginTop:"-40vh", opacity:0 }}
-            animate={{marginTop:"0px", opacity:1}}
+            initial={{marginLeft:"-20vh", opacity:0 }}
+            animate={{marginLeft:"0px", opacity:1}}
             exit={{marginTop:"300vh", opacity:0}}
         >
             <DescriptionCard>
