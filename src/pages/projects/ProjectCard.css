@@ -11,7 +11,11 @@
     align-items: center;
     cursor: pointer;
     flex: none;
-    transform-style: preserve-3d;
+    transition: .1s;
+}
+
+.ProjectCard:hover{
+    transform: scale(1.03);
 }
 
 .ProjectCard img{
@@ -19,6 +23,7 @@
     min-height: 100%;
     transition: .2s;
 }
+
 .ProjectTechs{
     position: absolute;
     display: flex;
@@ -33,6 +38,41 @@
     overflow: hidden;
     transform: translateZ(2000px);
 }
+
+.ProjectDescription{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #121212;
+    color: rgb(224, 224, 224);
+    box-sizing: border-box;
+    transition: .1s;
+    z-index: 998;
+    overflow-wrap: break-word;
+}
+
+.ProjectDescription:hover{
+    opacity: 1;
+}
+
+.ProjectDescription h2{
+    font-size: 1.4em;
+    padding: 10px;
+    color: rgb(242, 242, 242);
+    border-bottom: 2px solid rgb(224, 224, 224);
+}
+
+.ProjectDescription h3{
+    padding: 0px;
+    font-size: 1em;
+    font-weight: 600;
+}
+
 .TechLogo{
     width: 1.4em;
     height: 1.4em;

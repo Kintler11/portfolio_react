@@ -8,7 +8,7 @@ const getCountry = () => {
   return COUNTRIES_DATA.filter((country)=>{return country.country == "FI"})[0]
 };
 
-const CustomGlobe = ({renderer}) => {
+const CustomGlobe = ({renderer, rotate}) => {
   const globeEl = useRef();
   const country = getCountry();
   const [selectedCountry, setSelectedCountry] = useState({

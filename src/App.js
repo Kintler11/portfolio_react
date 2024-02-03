@@ -13,6 +13,9 @@ import Header from './components/header/Header';
 import MainInfo from './pages/main/MainInfo'
 import Projects from './pages/projects/Projects'
 import About from './pages/aboutme/About';
+import ReactGA from 'react-ga';
+const TRACKING_ID = "G-Z5NC5KL0MN"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
 const App = () => {
   const [currentPage, setCurrentPage] = useState("");
   let location = useLocation();

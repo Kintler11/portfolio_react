@@ -6,6 +6,9 @@ import {motion} from 'framer-motion';
 import CustomGlobe from "./CustomGlobe";
 const MainInfo = () => {
     const [showGlobe, setShowGlobe] = useState(false);
+
+    var birthday = +new Date('07/09/2003');
+
     useEffect(()=>{setTimeout(()=>setShowGlobe(true),(500))},[])
     return (
         <motion.div 
@@ -31,7 +34,7 @@ const MainInfo = () => {
                         repeat={Infinity}
                         style={{ fontSize: '2em' }}
                     />
-                <h2>Hei, olen Kait - 19-vuotias kehittäjä, jolla on kokemusta verkkokehityksessä ja ohjelmistokehityksessä.</h2>
+                <h2>Hei, olen Kait - {Math.floor((Date.now() - birthday) / (31557600000))}-vuotias kehittäjä, jolla on kokemusta verkkokehityksessä ja ohjelmistokehityksessä.</h2>
             </div>{/* 
             <Globe backgroundColor="rgba(0,0,0,0)" width="500" height="500"/> */}
             {showGlobe ? <CustomGlobe/> : <div className='scene-container' style={{minWidth:"500px"}}></div>}

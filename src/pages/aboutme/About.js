@@ -40,9 +40,9 @@ const About = () => {
             <SkillList title="Osaamiseni">
                 <SkillCard title="Frontend" icon={<TbBrowser/>} >
                     <h2>React</h2>
-                    <h2>HTML</h2>
-                    <h2>CSS</h2>
+                    <h2>Svelte</h2>
                     <h2>Javascript</h2>
+                    <h2>CSS</h2>
                 </SkillCard>
                 <SkillCard title="Backend" icon={<FaServer/>} >
                     <h2>PHP</h2>
