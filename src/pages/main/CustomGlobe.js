@@ -55,14 +55,14 @@ const CustomGlobe = ({renderer, rotate}) => {
       enableGlobeGlow={false}
       labelsData={[selectedCountry]}
       labelText={"label"}
-      labelSize={3}
+      labelSize={4}
       labelColor={useCallback(() => "white", [])}
       labelDotRadius={1}
       labelAltitude={0.05}
       hexPolygonsData={hex.features}
       hexPolygonResolution={2}
       hexPolygonMargin={0.3}
-      hexPolygonColor={useCallback(() => "rgb(255, 30, 30)", [])}
+      hexPolygonColor={useCallback(() => "rgb(255, 10, 10)", [])}
     />
   );
 }

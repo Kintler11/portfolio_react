@@ -35,6 +35,21 @@ canvas{
     overflow: hidden;
 }
 
+.location-text{
+    display: flex;
+    flex-direction: row;
+}
+
+.location-text .scramble::first-letter{
+    color: red;
+}
+
+
+.location-text h2{
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
 @media only screen and (max-width: 800px) {
     .info-container{
         flex-direction: column-reverse;
