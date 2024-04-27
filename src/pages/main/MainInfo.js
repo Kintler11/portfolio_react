@@ -7,10 +7,12 @@ import CustomGlobe from "./CustomGlobe";
 import RandomText from '../../components/RandomText';
 const MainInfo = () => {
     const [showGlobe, setShowGlobe] = useState(false);
+    const [showText, setShowText] = useState(false);
 
     var birthday = +new Date('07/09/2003');
 
-    useEffect(()=>{setTimeout(()=>setShowGlobe(true),(500))},[])
+    useEffect(()=>{setTimeout(()=>setShowGlobe(true),(0))},[])
+    useEffect(()=>{setTimeout(()=>setShowText(true),(500))},[])
     return (
         <motion.div 
             className='info-container'
@@ -35,11 +37,11 @@ const MainInfo = () => {
                         repeat={Infinity}
                         style={{ fontSize: '2em' }}
                     />
-                <h2>Hei, olen Kait - {Math.floor((Date.now() - birthday) / (31557600000))}-vuotias kehittäjä, jolla on kokemusta verkkokehityksessä ja ohjelmistokehityksessä.</h2>
+                <h2>Hei, olen Kait. Olen kehittäjä jolla on kokemusta verkko- ja ohjelmistokehityksessä.</h2>
             </div>
-            <div style={{display: "flex", flexDirection: "column", justifyContent:"center", alignItems: "center"}}>
+            <div className='globe-container'>
                 {showGlobe ? <CustomGlobe/> : <div className='scene-container' style={{minWidth:"500px"}}></div>}
-                <RandomText text='Turku, Finland' className="location-text" />
+                {showText ? <RandomText text='Turku, Finland' className="location-text" /> : <></>}
             </div>
         </motion.div>
     );

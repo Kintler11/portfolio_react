@@ -1,9 +1,11 @@
+$project-per-row: 4;
+
 .ProjectList{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 80vw;
+    max-width: calc((22rem * $project-per-row) + (($project-per-row - 1) * 20px));
     height: fit-content;
     width: 100%;
 }
@@ -28,6 +30,11 @@
     margin: 0 20px;
     padding: 20px 0px;
     gap: 20px;
+}
+
+.ListContent::after {
+    content: "";
+    flex: auto;
 }
 
 @media only screen and (max-width: 800px) {

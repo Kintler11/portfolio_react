@@ -1,16 +1,52 @@
-import './Projects.css';
+import './Projects.scss';
 import React, { useState, useMemo, useEffect, useRef, memo } from "react";
 import {motion} from 'framer-motion';
 import ProjectList from "./ProjectList";
 import ProjectCard from "./ProjectCard";
+import { FaJs, FaReact, FaHtml5, FaCss3, FaRust, FaJava, FaSass, FaVaadin } from 'react-icons/fa';
+import { SiSvelte } from "react-icons/si";
 import ProjectPopup from "./ProjectPopup";
+import projects from "../../data/projects.json"
+
 const openInNewTab = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');
-  };
+};
+
 const Projects = () => {
     const [animated, setAnimated] = useState(false);
-    const [popupActive, setPopupActive] = useState(false);
-    const [popupData, setPopupData] = useState({title:"", description:""})
+    const [technologies, setTechnologies] = useState([])
+
+    const [filter, setFilter] = useState([]);
+
+    const filter_group = {
+        "Web": ["React", "Svelte" , "Vaadin", "HTML", "JS", "CSS", "SCSS", "PHP"],
+        "Software": ["Java", "Rust"]
+    }
+
+    const TechnologyIcons = {
+        "js": <FaJs />,
+        "java": <FaJava />,
+        "scss": <FaSass />,
+        "vaadin": <FaVaadin />,
+        "php": <h1>PHP</h1>,
+        "react": <FaReact />,
+        "svelte": <SiSvelte />,
+        "html": <FaHtml5 />,
+        "css": <FaCss3 />,
+        "rust": <FaRust />
+    };
+
+    useEffect(()=>{
+        let techs = Array.from(new Set(projects.map((project) => {
+            return project.skills.map((skill) => skill);
+        }).flat()));
+
+        setFilter(techs);
+
+        setTechnologies(techs);
+    },[])
+
+
     const tempStyle = {
         overflow:"hidden !important",
         flexWrap:"nowrap !important"
@@ -29,30 +65,41 @@ const Projects = () => {
             animate={{marginTop:"0px", opacity:1}}
             exit={{marginTop:"300vh", opacity:0}}
         >
-           <ProjectList title="Kehittäjänä Toiminut" style={animated ? tempStyle : {}}>
-                <ProjectCard onClick={()=>{openInNewTab("https://www.admin.taskussa.info")}} image="/taskussa.png" icons={["js","php","html","css"]}>
-                    <h2 className='ProjectTitle'>Admin Taskussa</h2> 
-                    <h3 className='ProjectText'>Ylläpitoverkkosivu Taskussa -sovelluksia varten. Kehitin verkkosivun ja sen backendin. Sovelluksille puhuva API oli myös osana kehitystä. </h3> 
-                </ProjectCard>
-                <ProjectCard onClick={()=>{openInNewTab("https://www.somero.taskussa.info")}} image="/somerotaskussa.png" icons={["js","php","react","Fornite"]} >
-                    <h2 className='ProjectTitle'>Somero Taskussa</h2> 
-                    <h3 className='ProjectText'>Kaupunkisovellus Somerolle jolle kehitin API:n ja jolle tein ylläpitoa.</h3> 
-                </ProjectCard>
-                <ProjectCard onClick={()=>{openInNewTab("https://www.salotaskussa.fi")}} image="/salotaskussa.png" icons={["js","php","react"]} >
-                    <h2 className='ProjectTitle'>Salo Taskussa</h2> 
-                    <h3 className='ProjectText'>Kaupunkisovellus Salolle. Sovellukselle kehitin bussidata parserin joka tuo käytäjälle esille bussi reitit ja ajat. Toin myös sovellukseen live bussi tieto osan, joka näyttää missä bussit on hetkellä liikkeellä.</h3> 
-                </ProjectCard>
-            </ProjectList>{
-            <ProjectList title="Omat Projektit" style={animated ? tempStyle : {}}>
-                <ProjectCard onClick={()=>{openInNewTab("https://github.com/Kintler11/rust-discord-gpt-bot")}} image="/rust-bot.png" icons={["rust"]} >
-                    <h2 className='ProjectTitle'>Discord GPT Bot</h2> 
-                    <h3 className='ProjectText'>Discord keskustelupalstalle luoto GPT -botti jonka ohjelmoin rust kielellä. Botti vastaa käyttäjien viesteille GPT mallin avulla.</h3> 
-                </ProjectCard>
-                <ProjectCard onClick={()=>{openInNewTab("https://github.com/Kintler11/LOL-Tracker")}} image="/lol-tracker.png" icons={["rust", "js", "svelte"]} >
-                    <h2 className='ProjectTitle'>LOL Tracker</h2> 
-                    <h3 className='ProjectText'>League Of Legends pelille tarkoitettu ohjelma, joka seuraa aktiivistä peliä ja pisteyttää pelin menevyyden mukaisesti. Ohjelmassa on myös muita työkaluja jolla voi pitää hauskaa pelissä.</h3> 
-                </ProjectCard>
-            </ProjectList>}
+            <div className={'skill-list'}>
+                <div className='skill-group'>
+                    <h2 className='skill-group-heading'>Frontend</h2>
+                    {
+                        technologies.map((tech)=>{
+                            return <div className='skill-container' key={tech} onClick={
+                                        ()=>{
+                                            (filter.includes(tech)) ? 
+                                            setFilter(filter.filter((t) => t!=tech)) : 
+                                            setFilter([...filter, tech])
+                                        }
+                                    }
+                                    aria-selected={filter.includes(tech) ? true : false}
+                                    >
+                                        <div className='skill-logo'>{TechnologyIcons[tech.toLowerCase()]}</div>
+                                        <div className='skill-name'>{tech}</div>
+                                    </div>
+                        })
+                    }
+                </div>
+            </div>
+           <ProjectList title="Kehittäjänä toiminut" style={animated ? tempStyle : {}}>
+                {
+                    projects.map((project) => {
+                        let in_filter = project.skills.filter(function(n) {
+                            return filter.indexOf(n) !== -1;
+                        });
+                        if (in_filter.length == 0){return;}
+                        return  <ProjectCard onClick={()=>{openInNewTab(project.link)}} image={project.img} icons={project.skills} key={project.name}>
+                                    <h2 className='ProjectTitle'>{project.name}</h2> 
+                                    <h3 className='ProjectText'>{project.description}</h3> 
+                                </ProjectCard>;
+                    })
+                }
+            </ProjectList>
         </motion.div>
     );
 }

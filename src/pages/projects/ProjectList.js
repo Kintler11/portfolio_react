@@ -1,4 +1,4 @@
-import './ProjectList.css';
+import './ProjectList.scss';
 import React, { useState, useMemo, useEffect, useRef, memo } from "react";
 const ProjectList = (props) => {
     const { visible, cancel, children, title } = props;

@@ -1,11 +1,15 @@
 import './ProjectCard.css';
 import React, { useState, useMemo, useEffect, useRef, memo } from "react";
-import { FaJs, FaReact, FaHtml5, FaCss3, FaRust } from 'react-icons/fa';
+import { FaJs, FaReact, FaHtml5, FaCss3, FaRust, FaJava, FaSass, FaVaadin } from 'react-icons/fa';
 import { SiSvelte } from "react-icons/si";
 import Tilt from 'react-parallax-tilt';
-const ProjectCard = ({image, icons, onClick, children}) => {
+const ProjectCard = ({timeline, image, icons, onClick, children, working}) => {
 
     const TechnologyIcons = {
+        "js": <FaJs />,
+        "java": <FaJava />,
+        "scss": <FaSass />,
+        "vaadin": <FaVaadin />,
         "js": <FaJs />,
         "php": <h1>PHP</h1>,
         "react": <FaReact />,
@@ -17,14 +21,14 @@ const ProjectCard = ({image, icons, onClick, children}) => {
     
     return(
         <>
-            <div className='ProjectCard'>
+            <div className='ProjectCard' onClick={onClick}>
                 <div className='ProjectTechs'>
                     {icons.map((tech) => {
-                        if(!TechnologyIcons[tech]){return;}
-                        return <div className='TechLogo' key={tech}>{TechnologyIcons[tech]}</div>;
+                        if(!TechnologyIcons[tech.toLowerCase()]){return;}
+                        return <div className='TechLogo' key={tech}>{TechnologyIcons[tech.toLowerCase()]}</div>;
                     })}
                 </div>
-                <img onClick={onClick} src={image || './default.png' } />
+                <img src={image || './default.png' } />
                 <div className="ProjectDescription">
                     {children}
                 </div>

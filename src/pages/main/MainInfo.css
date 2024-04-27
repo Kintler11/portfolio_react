@@ -33,17 +33,29 @@ canvas{
 }
 .scene-container{
     overflow: hidden;
+    min-width: 500px;
+    min-height: 500px;
+}
+
+.globe-container{
+    display: flex; 
+    flex-direction: column; 
+    justify-content:center;
+    align-items: center;
+    gap: 10px;
 }
 
 .location-text{
+    padding: 10px;
+    border-top: rgb(255, 30, 30) 2px solid;
     display: flex;
     flex-direction: row;
+    color: #dbdbdb;
 }
 
 .location-text .scramble::first-letter{
     color: red;
 }
-
 
 .location-text h2{
     font-size: 3em;
@@ -63,10 +75,19 @@ canvas{
         max-height: 70vh !important;
     }
     .scene-container{
+        min-width: 0px;
+        min-height: 0px;
         width: 90vw !important;
         max-width: 70vh !important;
         height: 90vw !important;
         max-height: 70vh !important;
+    }
+
+    .globe-container{
+        flex-direction: row-reverse;
+    }
+    .location-text{
+        display: none;
     }
 
 }

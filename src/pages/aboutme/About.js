@@ -7,6 +7,8 @@ import SkillList from './SkillList';
 import SkillCard from './SkillCard';
 import DescriptionCard from './DescriptionCard';
 import PersonalInfo from './SkillCard';
+import SkillBar from '../../components/about/skillbar';
+
 const About = () => {
     return(
         <div className='about-container'>

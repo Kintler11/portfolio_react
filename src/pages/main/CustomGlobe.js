@@ -43,7 +43,7 @@ const CustomGlobe = ({renderer, rotate}) => {
       backgroundColor="rgba(0,0,0,0)"
       globeBackgroundTexture={null}
       showAtmosphere={false}
-      enablePointerInteraction={false}
+      enablePointerInteraction={true}
       renderer={renderer}
       onZoom={null}
       onGlobeClick={()=>{}}

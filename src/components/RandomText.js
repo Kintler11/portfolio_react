@@ -33,7 +33,7 @@ const RandomText = ({text, style, className}) => {
                 clearInterval(interval);
             }
 
-        },50);
+        },40);
     }, []);
 
     return (

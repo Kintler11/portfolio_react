@@ -1,0 +1,58 @@
+[
+    {
+        "section" : 0,
+        "name": "ViLLE",
+        "description": "Oppimisjärjestelmän ylläpitoa ja kehitystä, Turun yliopiston oppimis­analytiikan tutkimusinstituutille.",
+        "link": "https://www.oppimisanalytiikka.fi/ville/",
+        "skills": ["Vaadin", "Java", "JS", "SCSS"],
+        "img": "/ViLLE.png"
+    },
+    {
+        "section" : 0,
+        "name": "Salo Taskussa",
+        "description": "Kaupunkisovellus Salolle. Sovellukselle kehitin bussidata parserin joka tuo käytäjälle esille bussi reitit ja ajat. Toin myös sovellukseen live bussi tieto osan, joka näyttää missä bussit on hetkellä liikkeellä.",
+        "link": "https://www.salotaskussa.fi",
+        "skills": ["JS", "PHP", "React"],
+        "img": "/salotaskussa.png"
+    },
+    {
+        "section" : 0,
+        "name": "Admin Taskussa",
+        "description": "Oppimisjärjestelmän ylläpitoa ja kehitystä, Turun yliopiston oppimis­analytiikan tutkimusinstituutille.",
+        "link": "https://www.admin.taskussa.info",
+        "skills": ["JS", "PHP", "HTML", "CSS"],
+        "img": "/taskussa.png"
+    },
+    {
+        "section" : 0,
+        "name": "Somero Taskussa",
+        "description": "Kaupunkisovellus Somerolle jolle kehitin API:n ja jolle tein ylläpitoa.",
+        "link": "https://www.somero.taskussa.info",
+        "skills": ["JS","PHP","React"],
+        "img": "/somerotaskussa.png"
+    },
+    {
+        "section" : 1,
+        "name": "Discord GPT Bot",
+        "description": "Discord keskustelupalstalle luoto GPT -botti jonka ohjelmoin rust kielellä. Botti vastaa käyttäjien viesteille GPT mallin avulla.",
+        "link": "https://github.com/Kintler11/rust-discord-gpt-bot",
+        "skills": ["Rust"],
+        "img": "/rust-bot.png"
+    },
+    {
+        "section" : 1,
+        "name": "LOL Tracker",
+        "description": "League Of Legends pelille tarkoitettu ohjelma, joka seuraa aktiivistä peliä ja pisteyttää pelin menevyyden mukaisesti. Ohjelmassa on myös muita työkaluja jolla voi pitää hauskaa pelissä.",
+        "link": "https://github.com/Kintler11/LOL-Tracker",
+        "skills": ["Rust", "JS", "Svelte"],
+        "img": "/lol-tracker.png"
+    },
+    {
+        "section" : 1,
+        "name": "Portfolio",
+        "description": "TÄMÄ SIVUSTO!!!",
+        "link": "https://github.com/Kintler11/portfolio_react",
+        "skills": ["React", "SCSS", "CSS"],
+        "img": "/default.png"
+    }
+]
